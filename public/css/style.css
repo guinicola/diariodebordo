@@ -1,0 +1,43 @@
+body{
+    background-color: #f0f0f0;
+}
+
+
+main{
+    padding-top: 80px;
+}
+
+@media only screen and (min-width: 1200px){
+    .ui.ui.ui.container:not(.fluid) {
+        width: 1090px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+.pagination{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%);
+    border-radius: 0.28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
+}
+
+
+.pagination .page-item a,
+.pagination .page-item span{
+    display: block;
+    padding: 6px 11px;
+    outline: 1px solid #e4e4e4;
+}
+
+.txtRt{
+    text-align: right;
+}
