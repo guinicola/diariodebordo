@@ -1,8 +1,9 @@
 <form action="{{$action}}" method="post" class="ui form" enctype="multipart/form-data">
     @csrf
-
     @isset($title)
-        @method("PUT")
+        @if(!$duplicate)
+            @method("PUT")
+        @endif
     @endisset
 
     <div class="ui grid">
@@ -39,7 +40,7 @@
             <div class="field">
                 <label for="class">
                     Sala:
-                    <input placeholder="Ex: 6A" type="text" maxlength="2" name="class" id="class" @isset($class) value="{{ $class }}" @endisset>
+                    <input placeholder="Ex: 6A" type="text" name="class" id="class" @isset($class) value="{{ $class }}" @endisset>
                 </label>
             </div>
         </div>

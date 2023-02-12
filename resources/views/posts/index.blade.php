@@ -93,9 +93,9 @@
         
                     <thead>
                         <tr>
-                            <th width="50%">Data / Horário</th>
-                            <th width="30%">Sala</th>
-                            <th width="20%" class="center aligned">Ações</th>
+                            <th width="45%">Data / Horário</th>
+                            <th width="25%">Sala</th>
+                            <th width="30%" class="center aligned">Ações</th>
                         </tr>
                     </thead>
         
@@ -116,6 +116,7 @@
                                 <td class="item center aligned" style="display:flex; justify-content:center;">
                                     <a href="javascript:viewRegister({{$post->id}},'{{$post->title}}');" class="ui mini circular blue icon button popupIt" data-content="Ver Registro"><i class="eye icon"></i></a>
                                     <a href='{{ route('posts.edit',$post->id) }}' class="ui mini circular green icon button popupIt" data-content="Editar Registro"><i class="edit icon"></i></a>
+                                    <a href='/posts/{{$post->id}}/duplicate' class="ui mini circular yellow icon button popupIt" data-content="Duplicar Registro"><i class="copy icon"></i></a>
                                     <a href="javascript:void(0);" data-id="{{$post->id}}" data-hour="{{$post->time_from}} | {{$post->time_to}}" class="ui mini circular red icon button popupIt destroyRegister" data-content="Remover Registro"><i class="remove icon"></i></a>
                                     <form method="POST" id='destroyRegister_{{$post->id}}' style="display: none;" action="{{ route('posts.destroy',$post->id) }}">
                                         @method("DELETE")

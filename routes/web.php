@@ -24,6 +24,7 @@ Route::get ('/',[HomeController::class, 'index']);
 ## posts
 Route::resource ('/posts',PostsController::class);
 Route::get ('/posts/print/{id}',[PostsController::class, 'print']);
+Route::get ('/posts/{post}/duplicate',[PostsController::class, 'duplicate']);
 
 Auth::routes();
 
