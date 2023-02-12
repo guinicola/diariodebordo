@@ -23,7 +23,7 @@
         </div>
         @endisset
 
-        <x-form :action="route('posts.update', $post->id)" :date="$post->date" :timefrom="$post->time_from" :timeto="$post->time_to" :class="$post->class" :day="$post->day" :title="$post->title" :quantity="$post->quantity_classroom" :subject="$post->subject" :object="$post->subject" :hability="$post->hability" :methodology="$post->methodology" :activities="$post->activities" :systematization="$post->systematization" :extrainfo="$post->extrainfo" />
+        <x-form :action="route('posts.update', $post->id)" :duplicate="false" :date="$post->date" :timefrom="$post->time_from" :timeto="$post->time_to" :class="$post->class" :day="$post->day" :title="$post->title" :quantity="$post->quantity_classroom" :subject="$post->subject" :object="$post->subject" :hability="$post->hability" :methodology="$post->methodology" :activities="$post->activities" :systematization="$post->systematization" :extrainfo="$post->extrainfo" />
         
 
     </div>
