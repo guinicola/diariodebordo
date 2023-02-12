@@ -27,7 +27,7 @@ class HomeController extends Controller
 
         $posts = Post::query()
                 ->orderBy('date','desc')
-                ->orderBy('time_to','desc')
+                ->orderBy('time_to','asc')
                 ->paginate(12);
 
         return view('home')

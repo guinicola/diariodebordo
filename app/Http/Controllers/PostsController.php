@@ -38,7 +38,7 @@ class PostsController extends Controller
         $posts = Post::query()
                 ->where($sqlWhere)
                 ->orderBy('date','desc')
-                ->orderBy('time_to','desc')
+                ->orderBy('time_to','asc')
                 ->paginate(100);
         $messageSuccess = $request->session()->get('message.success');
 
