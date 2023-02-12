@@ -115,6 +115,7 @@
                                 </td>
                                 <td class="item center aligned" style="display:flex; justify-content:center;">
                                     <a href="javascript:viewRegister({{$post->id}},'{{$post->title}}');" class="ui mini circular blue icon button popupIt" data-content="Ver Registro"><i class="eye icon"></i></a>
+                                    @if(Auth::check())
                                     <a href='{{ route('posts.edit',$post->id) }}' class="ui mini circular green icon button popupIt" data-content="Editar Registro"><i class="edit icon"></i></a>
                                     <a href='/posts/{{$post->id}}/duplicate' class="ui mini circular yellow icon button popupIt" data-content="Duplicar Registro"><i class="copy icon"></i></a>
                                     <a href="javascript:void(0);" data-id="{{$post->id}}" data-hour="{{$post->time_from}} | {{$post->time_to}}" class="ui mini circular red icon button popupIt destroyRegister" data-content="Remover Registro"><i class="remove icon"></i></a>
@@ -122,6 +123,7 @@
                                         @method("DELETE")
                                         @csrf
                                     </form>
+                                    @endif
                                 </td>
                             </tr>
                 
