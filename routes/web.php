@@ -21,8 +21,16 @@ use App\Http\Controllers\PostsController;
 Route::get ('/home',[HomeController::class, 'index']);
 Route::get ('/',[HomeController::class, 'index']);
 
+
+
+
 ## posts
-Route::resource ('/posts',PostsController::class);
+Route::middleware('auth')->group(function () {
+    Route::resource ('/posts',PostsController::class)->only(['create','edit']);
+});
+Route::resource ('/posts',PostsController::class)->except(['create','edit']);
+
+
 Route::get ('/posts/print/{id}',[PostsController::class, 'print']);
 Route::get ('/posts/{post}/duplicate',[PostsController::class, 'duplicate']);
 
